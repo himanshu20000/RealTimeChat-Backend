@@ -1,5 +1,7 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('../firebase-service-account.json');
+const path = '/etc/secrets/firebase-service-account.json';  // The path to the secret file in Render
+
+const serviceAccount = require(path);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
